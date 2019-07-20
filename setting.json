@@ -1,0 +1,32 @@
+{
+	"lan" : "TW",
+	"title": "YouTube 下載工具",
+	"gui": {
+		"url" : "YouTube網址：",
+		"type": "格式：",
+		"des" : "儲存位置：",
+		"paste" : "貼上",
+		"option" : "設置",
+		"audio" : "音訊",
+		"video" : "影片",
+		"ok" : "確認",
+		"quit" : "關閉"
+	},
+	"options": {
+		"dialog" : "請選擇儲存位置",
+		"dinied" : " 存取被拒"
+	},
+	"box_empty": {
+		"both" : "輸入網址與儲存位置不可空白",
+		"url" : "輸入網址不可空白",
+		"dst" : "儲存位置不可空白"
+	},
+	"download": {
+		"on_progress": "正在下載中...",
+		"init": "正在初始化下載...",
+		"downloaded": "已經完成"
+	},
+	"success" : "下載成功",
+	"error": "錯誤發生",
+	"url_error": "請再次檢查所輸入的網址是否正確"
+}

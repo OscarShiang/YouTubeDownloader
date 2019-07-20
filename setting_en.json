@@ -1,0 +1,32 @@
+{
+	"lan" : "EN",
+	"title": "YouTube Downloader",
+	"gui": {
+		"url" : "YouTube URL：",
+		"type": "Type：",
+		"des" : "Destination：",
+		"paste" : "Paste",
+		"option" : "Option",
+		"audio" : "Audio",
+		"video" : "Video",
+		"ok" : "OK",
+		"quit" : "Quit"
+	},
+	"options": {
+		"dialog" : "Select Destination",
+		"dinied" : "Access Dinied"
+	},
+	"box_empty": {
+		"both" : "Woops!  You forgot to enter the URL and the destination.",
+		"url" : "Woops!  You forgot to enter the URL.",
+		"dst" : "Woops!  You forgot to enter the destination."
+	},
+	"download": {
+		"on_progress": "Dowloading...",
+		"init": "Initializing...",
+		"downloaded": "had been downloaded."
+	},
+	"success" : "Download Successfully.",
+	"error": "Something happneded wrong.",
+	"url_error": "Please check if the URL is right."
+}
