@@ -1,0 +1,2 @@
+# YouTube Downloader
+This project is a tool for me to download videos from YouTube. The whole program is written with Python and the core libraries are [wxPython](https://wxpython.org) and [youtube-dl](https://ytdl-org.github.io/youtube-dl/index.html) with these APIs, users can easily download video with the highest quality (such as 1080p) or simply the audio with m4a format. 
