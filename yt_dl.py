@@ -11,7 +11,7 @@ import os
 import json
 import youtube_dl
 
-file = open('setting.json', 'r')
+file = open('setting.json', 'r', encoding = 'utf-8')
 setting = json.loads(file.read())
 file.close()
 
