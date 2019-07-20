@@ -3,10 +3,10 @@
 	"title": "YouTube 下載工具",
 	"size": {
 		"width": 400,
-		"height": 200
+		"height": 220
 	},
 	"gui": {
-		"url" : "YouTube網址：",
+		"url" : "YouTube 網址：",
 		"type": "格式：",
 		"des" : "儲存位置：",
 		"paste" : "貼上",
@@ -17,8 +17,8 @@
 		"quit" : "關閉"
 	},
 	"space": {
-		"des": 12,
-		"type": 50
+		"des": 30,
+		"type": 55
 	},
 	"options": {
 		"dialog" : "請選擇儲存位置",
