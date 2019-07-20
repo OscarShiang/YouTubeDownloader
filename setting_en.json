@@ -1,6 +1,10 @@
 {
 	"lan" : "EN",
 	"title": "YouTube Downloader",
+	"size": {
+		"width": 400,
+		"height": 200
+	},
 	"gui": {
 		"url" : "YouTube URL：",
 		"type": "Type：",
@@ -11,6 +15,10 @@
 		"video" : "Video",
 		"ok" : "OK",
 		"quit" : "Quit"
+	},
+	"space": {
+		"des": 12,
+		"type": 50
 	},
 	"options": {
 		"dialog" : "Select Destination",

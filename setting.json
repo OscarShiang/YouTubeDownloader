@@ -1,6 +1,10 @@
 {
 	"lan" : "TW",
 	"title": "YouTube 下載工具",
+	"size": {
+		"width": 400,
+		"height": 200
+	},
 	"gui": {
 		"url" : "YouTube網址：",
 		"type": "格式：",
@@ -11,6 +15,10 @@
 		"video" : "影片",
 		"ok" : "確認",
 		"quit" : "關閉"
+	},
+	"space": {
+		"des": 12,
+		"type": 50
 	},
 	"options": {
 		"dialog" : "請選擇儲存位置",
