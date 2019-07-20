@@ -172,11 +172,12 @@ class ytFrame(wx.Frame):
     def option(self, event):
         options = setting['options']
         with wx.DirDialog(self, options['dialog'], style = wx.DD_DEFAULT_STYLE | wx.DD_DIR_MUST_EXIST) as win:
-            if win.ShowModal() == wx.ID_OK:
-                mes = win.GetPath()
-                print(mes)
-                self.space_des.SetValue(os.path.join(mes, ''))
-            else:
+            try:
+                if win.ShowModal() == wx.ID_OK:
+                    mes = win.GetPath()
+                    print(mes)
+                    self.space_des.SetValue(os.path.join(mes, ''))
+            except:
                 wx.MessageBox(options['dinied'])
                 print('denied')
     
