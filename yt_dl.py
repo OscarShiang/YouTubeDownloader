@@ -11,10 +11,11 @@ import os
 import json
 import youtube_dl
 
-file = open('setting.json', 'r', encoding = 'utf-8')
+file = open('setting_en.json', 'r', encoding = 'utf-8')
 setting = json.loads(file.read())
 file.close()
 
+size = setting['size']
 
 #### need to be revised
 def getVideo(url, des):
@@ -73,9 +74,9 @@ def GetDesktopPath():
 
 class ytFrame(wx.Frame):
     def __init__(self, parent, name):
-        wx.Frame.__init__(self, parent = parent, title = name, size = (400, 200))
-        self.SetMaxSize((400, 200))
-        self.SetMinSize((400, 200)) #To set the frame size unchangable
+        wx.Frame.__init__(self, parent = parent, title = name, size = (size['width'], size['height']))
+        self.SetMaxSize((size['width'], size['height']))
+        self.SetMinSize((size['width'], size['height'])) #To set the frame size unchangable
         
         panel = wx.Panel(self)
         
@@ -91,9 +92,9 @@ class ytFrame(wx.Frame):
         self.space_des = wx.TextCtrl(panel, size = (200, 25), value = GetDesktopPath())
         
         #functionDiv
-        button_paste = wx.Button(panel, label = gui['paste'], size = (65, 28))
+        button_paste = wx.Button(panel, label = gui['paste'], size = (65, 30))
         self.Bind(wx.EVT_BUTTON, self.paste, button_paste)
-        button_opt = wx.Button(panel, label = gui['option'], size = (65, 28))
+        button_opt = wx.Button(panel, label = gui['option'], size = (65, 30))
         self.Bind(wx.EVT_BUTTON, self.option, button_opt)
         
         #optionDiv
@@ -103,9 +104,9 @@ class ytFrame(wx.Frame):
         self.button_audio.SetValue(False)
         
         #controlDiv
-        button_ok = wx.Button(panel, label = gui['ok'], size = (50, 40))
+        button_ok = wx.Button(panel, label = gui['ok'], size = (50, 30))
         button_ok.Bind(wx.EVT_BUTTON, self.buttonYt)
-        button_quit = wx.Button(panel, label = gui['quit'], size = (50, 40))
+        button_quit = wx.Button(panel, label = gui['quit'], size = (50, 30))
         button_quit.Bind(wx.EVT_BUTTON, self.Quit)
         
         
@@ -117,10 +118,13 @@ class ytFrame(wx.Frame):
         urlDiv.Add((5, 10))
         urlDiv.Add(button_paste)
         
+        # load the user-defined space in
+        space = setting['space']
+
         desDiv = wx.BoxSizer(wx.HORIZONTAL)
         desDiv.Add((10, 10))
         desDiv.Add(text_des)
-        desDiv.Add((12, 10))
+        desDiv.Add((space['des'], 10))
         desDiv.Add(self.space_des)
         desDiv.Add((5, 10))
         desDiv.Add(button_opt)
@@ -128,7 +132,7 @@ class ytFrame(wx.Frame):
         typeDiv = wx.BoxSizer(wx.HORIZONTAL)
         typeDiv.Add((10, 10))
         typeDiv.Add(text_type)
-        typeDiv.Add((50, 10))
+        typeDiv.Add((space['type'], 10))
         typeDiv.Add(self.button_video)
         typeDiv.Add(self.button_audio)
         
