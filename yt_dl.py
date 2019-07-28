@@ -29,7 +29,7 @@ def getVideo(url, des):
 
     # starting to download the video
     opts = {
-        'format': 'bestvideo+m4a',
+        'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]',
         'outtmpl': des + '%(title)s.%(ext)s',
         'progress_hooks': [progress_Check],
         'merge_output_format': 'mp4',
@@ -154,10 +154,10 @@ class ytFrame(wx.Frame):
         
         panel.SetSizerAndFit(frameDiv)
  
-        #icon setting       Run these code on Windows platform
-        #icon = wx.Icon()
-        #icon.LoadFile(name = 'logo.ico', type = wx.BITMAP_TYPE_ANY)
-        #self.SetIcon(icon)
+        # icon setting       Run these code on Windows platform
+        # icon = wx.Icon()
+        # icon.LoadFile(name = 'logo.ico', type = wx.BITMAP_TYPE_ANY)
+        # self.SetIcon(icon)
 
         self.Show(True)
     
