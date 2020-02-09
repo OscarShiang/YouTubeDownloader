@@ -12,8 +12,8 @@ If you want to use this tool, you should first check if the following libraries 
 
 > If you found some error when trying to download videos
 Please check if your 
-- youtube-dl has been updated to **2020.01.24** (or higher) to avoid error occuring when downloading
-- FFmpeg has been updated to **4.2.2** version to prevent from file merging problem
+> `youtube-dl` has been updated to **2020.01.24** (or higher) to avoid error occuring when downloading
+> `FFmpeg` has been updated to **4.2.2** version to prevent from file merging problem
 
 
 ### Notice 
