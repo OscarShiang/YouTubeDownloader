@@ -9,12 +9,11 @@ If you want to use this tool, you should first check if the following libraries 
 2. `wxPython` to build the GUI interface for users
 3. `youtube-dl` download the video from YouTube
 4. `FFmpeg` (**optional**) If you need to merge the seperate vidoe file or convert the format of the video
-:::info
-If you found some error when trying to download videos
+
+> If you found some error when trying to download videos
 Please check if your 
 - youtube-dl has been updated to **2020.01.24** (or higher) to avoid error occuring when downloading
 - FFmpeg has been updated to **4.2.2** version to prevent from file merging problem
-:::
 
 
 ### Notice 
