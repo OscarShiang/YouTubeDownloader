@@ -11,13 +11,16 @@ import os
 import json
 import youtube_dl
 
-file = open('setting_en.json', 'r', encoding = 'utf-8')
-setting = json.loads(file.read())
-file.close()
+try:
+    file = open('setting_en.json', 'r', encoding = 'utf-8')
+    setting = json.loads(file.read())
+    file.close()
+except:
+    print("[ERROR] Fail to open setting_en.json")
+    exit(1)
 
 size = setting['size']
 
-#### need to be revised
 def getVideo(url, des):
     # load the setting in
     setup = setting['download']
@@ -109,7 +112,6 @@ class ytFrame(wx.Frame):
         button_quit = wx.Button(panel, label = gui['quit'], size = (50, 30))
         button_quit.Bind(wx.EVT_BUTTON, self.Quit)
         
-        
         #SeparatePart Adding
         urlDiv = wx.BoxSizer(wx.HORIZONTAL)
         urlDiv.Add((10, 10))
@@ -154,7 +156,8 @@ class ytFrame(wx.Frame):
         
         panel.SetSizerAndFit(frameDiv)
  
-        # icon setting       Run these code on Windows platform
+	# Run these code on Windows platform
+        # icon setting
         # icon = wx.Icon()
         # icon.LoadFile(name = 'logo.ico', type = wx.BITMAP_TYPE_ANY)
         # self.SetIcon(icon)
@@ -182,7 +185,6 @@ class ytFrame(wx.Frame):
                 print('denied')
     
 
-    ##### need to be revised
     def buttonYt(self, event):
         #load in the settings
         box_empty = setting['box_empty']
@@ -197,6 +199,7 @@ class ytFrame(wx.Frame):
             wx.MessageBox(box_empty['dst'])
         else:
             try:
+		# TODO: make a simple and efficient way to verify the URL
                 if 'www.youtube.com' in url:
                     # switch if user want to download whole video or not
                     if self.button_video.GetValue():
