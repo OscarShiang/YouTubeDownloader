@@ -200,7 +200,7 @@ class ytFrame(wx.Frame):
         else:
             try:
 		# TODO: make a simple and efficient way to verify the URL
-                if 'www.youtube.com' in url:
+                if 'www.youtube.com' in url or 'youtu.be' in url:
                     # switch if user want to download whole video or not
                     if self.button_video.GetValue():
                         print('Start to Download the Video')
