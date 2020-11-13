@@ -56,10 +56,10 @@ def getAudio(url, des):
         'progress_hooks': [progress_Check],
         'merge_output_format': 'mp4',
     }
+    print('out: {}'.format(opts['outtmpl']))
     with youtube_dl.YoutubeDL(opts) as ydl:
         result = ydl.extract_info(url, download = True)
-    
-    
+
 def progress_Check(data):
     setup = setting['download']
 
@@ -199,7 +199,6 @@ class ytFrame(wx.Frame):
             wx.MessageBox(box_empty['dst'])
         else:
             try:
-		# TODO: make a simple and efficient way to verify the URL
                 if 'www.youtube.com' in url or 'youtu.be' in url:
                     # switch if user want to download whole video or not
                     if self.button_video.GetValue():
@@ -210,16 +209,16 @@ class ytFrame(wx.Frame):
                         getAudio(url, des)
 
                     # delete the progress bar and show up the successful message
-                    global progress
-                    del progress
                     print('Download successfully')
                     wx.MessageBox(setting['success'])
                 else:
                     wx.MessageBox(setting['url_error'])
-            except:
-                # if progress:
-                # del progress
+            except Exception as e:
+                # TODO: seperate errors like the file had been already downloaded
                 wx.MessageBox(setting['error'], style = wx.STAY_ON_TOP)
+            finally:
+                global progress
+                del progress
     
     def Quit(self, event):
         self.Destroy()
