@@ -16,5 +16,5 @@ Install the dependencies and run the program by the following lines:
 $ pip install pyqt6
 $ pip install git+https://github.com/ytdl-org/youtube-dl.git@master
 
-$ python yt_dl.py
+$ python main.py
 ```
